@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trenton Eden | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Splash Page Overlay -->
+    <div class="splash-overlay">
+        <video id="splash-video" class="splash-video" muted playsinline>
+            <source src="splashportfolio.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="splash-content">
+            <div class="text-box" id="name-box">
+                <span class="splash-text" id="name-text">Trenton Eden</span>
+            </div>
+            <div class="text-box" id="title1-box">
+                <span class="splash-text" id="title1-text">Technological Transformationalist</span>
+            </div>
+            <div class="text-box" id="title2-box">
+                <span class="splash-text" id="title2-text">EdTech Developer</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Portfolio Content -->
+    <main class="portfolio-content">
+        <!-- Hero Video Section (Behind Chatbot) -->
+        <section id="hero" class="hero-section">
+            <video id="hero-video" muted loop playsinline class="hero-video">
+                <source src="leader.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </section>
+
+        <!-- Chatbot Interaction Section -->
+        <section id="chatbot" class="chatbot-container">
+            <div class="chatbot">
+                <p class="chatbot-message">Hi, I’m Trenton! Would you like to know more about my:</p>
+                <div class="chatbot-options">
+                    <button class="chatbot-btn" data-section="education">Education</button>
+                    <button class="chatbot-btn" data-section="involvement">Campus Involvement</button>
+                    <button class="chatbot-btn" data-section="teaching">Teaching Experience</button>
+                    <button class="chatbot-btn" data-section="speaking">Conference Speaking</button>
+                    <button class="chatbot-btn" data-section="projects">Current Projects</button>
+                    <button class="chatbot-btn" data-section="achievements">Achievements</button>
+                </div>
+                <div id="chatbot-response" class="chatbot-response">
+                    <!-- Dynamic content will be inserted here -->
+                </div>
+            </div>
+            <div class="scroll-arrow">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="2">
+                    <path d="M12 5v14M5 12l7 7 7-7" />
+                </svg>
+            </div>
+        </section>
+
+        <!-- Highlights Section -->
+        <section id="highlights" class="content">
+            <h2>Professional Highlights</h2>
+            <ul class="highlights-list">
+                <li>Earned MBA with specialization in Commercial and Investment Real Estate from Coastal Carolina University (May 2025), maintaining a distinguished 3.9 GPA while simultaneously managing multiple business ventures and pursuing entrepreneurial initiatives.</li>
+                <li>Launched Good Techtactics following immersive technology exploration in Thailand, where I developed front-end expertise in HTML5, CSS3, and JavaScript to create engaging educational platforms. Currently building PrimEnglish, an innovative Thai-English language learning system combining interactive design with AI-assisted learning methodologies.</li>
+                <li>Co-founded and scaled The Verse Digital Media Assets LP (2023-2025), producing, directing and starring in over 500 YouTube videos and 65+ live streams while building status as a key opinion leader in cryptocurrency communities. Applied advanced technical analysis (Ichimoku, Donchian, Elliott Wave) to accurately predict market trends and advised blockchain developers on tokenomics while managing 50+ private investment clients.</li>
+                <li>Pioneered groundbreaking blockchain curriculum at Coastal Carolina University's Office of Continuing Studies, translating complex decentralized technologies into accessible educational content that bridges theoretical concepts with practical workforce applications across multiple industries.</li>
+                <li>Demonstrated exceptional media production talent through selection for the highly competitive ETV Endowment Internship (awarded to only 7 students annually from a statewide pool). Performance excellence led to immediate contract opportunities with South Carolina's PBS affiliate, including unprecedented editorial responsibilities previously restricted to staff positions.</li>
+                <li>Actively pursuing doctoral program admission to conduct advanced research at the intersection of educational technology, blockchain implementation, and cross-cultural learning methodologies, with particular focus on developing accessible technological solutions that transcend traditional educational boundaries.</li>
+            </ul>
+        </section>
+
+        <!-- Contact Information Section -->
+        <section id="contact" class="content">
+            <h2>Contact Information</h2>
+            <div class="contact-info">
+                <p>Email: <a href="mailto:banphaitree@gmail.com" aria-label="Email Trenton Eden">banphaitree@gmail.com</a></p>
+                <p>Phone: <a href="tel:+18434616751" aria-label="Call Trenton Eden">843 461 6751</a></p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Hero Video Section (Behind Chatbot) -->
+<section id="hero" class="hero-section">
+    <video id="hero-video" muted loop playsinline class="hero-video">
+        <source src="leader.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <!-- Spoof Image -->
+    <img id="spoof-image" class="spoof-image" src="spoof.png" alt="Trenton Eden on a hoverboard with text: Let me design your portfolio" />
+</section>
+
+    <script src="script.js"></script>
+</body>
+</html>
+    <!-- Existing script -->
+    <script src="script.js"></script>
+    <!-- Separate script for spoof.png animation -->
+    <script src="spoof-animation.js"></script>
+</body>
+</html>

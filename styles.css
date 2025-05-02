@@ -1,0 +1,416 @@
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    line-height: 1.6;
+}
+
+/* Splash Overlay Styles */
+.splash-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #000; /* Start with black for dip-to-black effect */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.splash-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0; /* Initially hidden for dip-to-black effect */
+}
+
+.splash-content {
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.text-box {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 182, 193, 0.8); /* Light pastel pink with transparency */
+    padding: 1rem 2rem;
+    border-radius: 15px;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 15px rgba(255, 182, 193, 0.5);
+}
+
+.splash-text {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
+    color: #333;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+#name-box {
+    animation: zoomOutWipe 1.5s forwards 1s; /* Start at 1s, end at 2.5s */
+}
+
+#title1-box {
+    animation: zoomInWipe 1.5s forwards 2.5s; /* Start at 2.5s, end at 4s */
+}
+
+#title2-box {
+    animation: zoomInWipe 1.5s forwards 4s; /* Start at 4s, end at 5.5s */
+}
+
+@keyframes zoomOutWipe {
+    0% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 1;
+    }
+    20% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    80% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(100vw, -50%) scale(1);
+        opacity: 0;
+    }
+}
+
+@keyframes zoomInWipe {
+    0% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 0;
+    }
+    20% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    80% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(100vw, -50%) scale(1);
+        opacity: 0;
+    }
+}
+
+.splash-overlay {
+    animation: fadeOut 1s forwards 5s; /* Fade out at 5s, ends at 6s */
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+/* Main Portfolio Content */
+.portfolio-content {
+    background-color: #000;
+    min-height: 100vh;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+/* Hero Video Section (Behind Chatbot) */
+.hero-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0; /* Initially hidden, controlled by JavaScript */
+}
+
+/* Chatbot Section */
+.chatbot-container {
+    position: relative;
+    z-index: 2;
+    padding: 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(20, 20, 20, 0.5));
+    opacity: 0;
+}
+
+.chatbot {
+    background-color: #141414;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+}
+
+.chatbot-message {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #fff;
+}
+
+.chatbot-options {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    max-width: 600px; /* Adjust to fit 3 buttons per row */
+    margin: 0 auto; /* Center the container */
+}
+
+.chatbot-btn {
+    background: linear-gradient(135deg, #ffcccb, #d4ebff, #e0ffe0);
+    color: #333;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.1s ease;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);
+    flex: 1 1 calc(33.33% - 2rem); /* 3 buttons per row with gap */
+    box-sizing: border-box;
+    min-width: 150px; /* Ensure buttons don’t shrink too much */
+    max-width: 180px; /* Prevent buttons from stretching too wide */
+    text-align: center;
+}
+
+.chatbot-btn:hover {
+    background: linear-gradient(135deg, #ffb6c1, #b0d8ff, #c0ffc0);
+    transform: scale(1.05);
+}
+
+.chatbot-response {
+    margin-top: 2rem;
+    background-color: #000;
+    padding: 1.5rem;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1.1rem;
+    text-align: left;
+    line-height: 1.8;
+}
+
+.chatbot-response h3 {
+    color: #d4ebff;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.chatbot-response h4 {
+    color: #e0ffe0;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.chatbot-response p {
+    margin: 0;
+}
+
+/* Scroll Arrow */
+.scroll-arrow {
+    margin-top: 2rem;
+    opacity: 0;
+    animation: hover 2s infinite ease-in-out;
+}
+
+.scroll-arrow svg {
+    cursor: pointer;
+}
+
+@keyframes hover {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+/* Content Sections */
+.content {
+    position: relative;
+    z-index: 2;
+    padding: 4rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.content h2 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.highlights-list {
+    list-style: none;
+    background-color: #141414;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.highlights-list li {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #ccc;
+}
+
+.highlights-list li:before {
+    content: "•";
+    color: #d4ebff;
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+}
+
+/* Contact Information Section */
+.contact-info {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.contact-info p {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #ccc;
+}
+
+.contact-info a {
+    color: #d4ebff; /* Light pastel blue for links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: #b0d8ff; /* Slightly darker pastel blue on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .splash-text {
+        font-size: 2rem;
+    }
+
+    .chatbot {
+        padding: 1.5rem;
+        max-width: 100%;
+    }
+
+    .chatbot-message {
+        font-size: 1.2rem;
+    }
+
+    .chatbot-btn {
+        padding: 0.6rem 1rem;
+        font-size: 1rem;
+    }
+
+    .content {
+        padding: 2rem 1rem;
+    }
+
+    .content h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero-video {
+        object-fit: cover;
+    }
+}
+/* Spoof Image (Hoverboard Animation) */
+.spoof-image {
+    position: absolute;
+    bottom: 10%;
+    right: -100%; /* Starts off-screen to the right */
+    width: 300px;
+    height: auto;
+    z-index: 3; /* Above the video, below the chatbot */
+    opacity: 0; /* Hidden until animation starts */
+}
+
+/* Trigger this class with JavaScript to start the animation */
+.spoof-image.animate {
+    animation: floatIn 2s ease-in-out forwards, floatOut 2s ease-in-out 62s forwards;
+}
+
+/* Entrance Animation */
+@keyframes floatIn {
+    0% {
+        transform: translateX(100%) rotate(0deg); /* Off-screen right */
+        opacity: 0;
+    }
+    50% {
+        transform: translateX(0) rotate(5deg); /* Wobble mid-flight */
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(0) rotate(0deg); /* Lands smoothly */
+        opacity: 1;
+    }
+}
+
+/* Exit Animation */
+@keyframes floatOut {
+    0% {
+        transform: translateX(0) rotate(0deg); /* Starts at rest */
+        opacity: 1;
+    }
+    50% {
+        transform: translateX(-50%) rotate(-5deg); /* Wobble as it takes off */
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-100%) rotate(0deg); /* Zooms off left */
+        opacity: 0;
+    }
+}
+
+/* Responsive Design for Spoof Image */
+@media (max-width: 768px) {
+    .spoof-image {
+        width: 200px;
+        bottom: 5%;
+    }
+}
